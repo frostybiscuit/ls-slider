@@ -1,0 +1,125 @@
+.ls-slider {
+  --passive-color: #222;
+  --active-color: orange;
+  --button-width: 100px;
+  --arrow-size: 35px;
+  --arrow-thickness: 8px;
+  --drop-shadow: drop-shadow(0 0 2px lightgrey);
+  position: relative;
+}
+.ls-slider *,
+.ls-slider ::before,
+.ls-slider ::after {
+  box-sizing: border-box;
+}
+.ls-slider .ls-slide {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: x mandatory;
+}
+.ls-slider .ls-slide .ls-element {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  scroll-snap-align: start;
+}
+.ls-slider .ls-slide .ls-element > * {
+  max-width: 100%;
+}
+.ls-slider .ls-slide .ls-element .ls-observer-collider {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.ls-slider .ls-previous-button,
+.ls-slider .ls-next-button {
+  position: absolute;
+  width: var(--button-width);
+  height: 100%;
+  top: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+.ls-slider .ls-previous-button[disabled],
+.ls-slider .ls-next-button[disabled] {
+  opacity: 0.25;
+  pointer-events: none;
+}
+.ls-slider .ls-previous-button::after,
+.ls-slider .ls-next-button::after {
+  content: "";
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  border: var(--arrow-thickness) solid transparent;
+  border-top-color: var(--passive-color);
+  border-left-color: var(--passive-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  filter: var(--drop-shadow);
+}
+.ls-slider .ls-previous-button:hover::after,
+.ls-slider .ls-next-button:hover::after {
+  border-top-color: var(--active-color);
+  border-left-color: var(--active-color);
+}
+.ls-slider .ls-previous-button {
+  left: 0;
+}
+.ls-slider .ls-next-button {
+  right: 0;
+  transform: rotate(180deg);
+}
+.ls-slider .ls-indicator-wrapper {
+  display: flex;
+  column-gap: 10px;
+  list-style: none;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  margin: 0 auto;
+}
+.ls-slider .ls-indicator-wrapper .ls-indicator {
+  height: 6px;
+  width: 50px;
+  background-color: var(--passive-color);
+  filter: var(--drop-shadow);
+  cursor: pointer;
+}
+.ls-slider .ls-indicator-wrapper .ls-indicator.ls-active, .ls-slider .ls-indicator-wrapper .ls-indicator:hover {
+  background-color: var(--active-color);
+}
+.ls-slider.ls-touch-controls .ls-slide {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-coordinate: 0 0;
+  -webkit-scroll-snap-points-x: repeat(100%);
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.ls-slider.ls-touch-controls .ls-slide::-webkit-scrollbar {
+  height: 0;
+}
+@media (hover: none) {
+  .ls-slider.ls-touch-controls .ls-previous-button,
+  .ls-slider.ls-touch-controls .ls-next-button {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
