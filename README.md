@@ -1,6 +1,14 @@
 # ls-slider
 A lightweight JS/CSS Slider with focus on native mobile touch controls
 
+## Pre-release To-Do's
+- [ ] fix indicator scroll animation
+- [x] fix infinite scroll on mobile
+- [ ] fix initial slide position when infinite are active
+- [ ] add visible slides functionality
+- [ ] consider accessibility (might be done after initial release)
+- [ ] code cleanup
+
 ## Setup
 ls-slider is initialized by passing the elements and options to a JS class.
 For example:
