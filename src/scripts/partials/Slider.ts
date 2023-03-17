@@ -1,10 +1,10 @@
 /*
   TODO - fix indicator scroll animation
   //TODO - fix infinite scroll on mobile
+  TODO - fix initial slide position when infinite are active
   TODO - add visible slides functionality
   TODO - consider accessibility
   TODO - code cleanup
-  TODO - setup package.json
 */
 
 type SliderOptions = {
@@ -235,12 +235,12 @@ export class Slider {
     if (this.options.touchControls && this.isTouchDevice) {
       let initial = true;
       let debounce: number;
-      const observer = new IntersectionObserver(entries => {
+      const observer = new IntersectionObserver((entries) => {
         if (initial) {
           initial = false;
           return false;
         }
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const slideElement: HTMLLIElement | null = entry.target.closest(`.${this.SLIDER_ELEMENT_CLASS}`);
             if (debounce) {
@@ -273,7 +273,7 @@ export class Slider {
       });
 
       this.slider?.addEventListener(this.SLIDER_INITIALIZED_EVENT, () => {
-        this.slide?.querySelectorAll(`.${this.OBSERVER_COLLIDER_CLASS}`)?.forEach(element => {
+        this.slide?.querySelectorAll(`.${this.OBSERVER_COLLIDER_CLASS}`)?.forEach((element) => {
           observer.observe(element);
         });
       });
@@ -285,7 +285,7 @@ export class Slider {
       const images: NodeListOf<HTMLImageElement> | undefined = this.slide?.querySelectorAll("img");
       const amountOfImages = images?.length;
       let imagesLoaded = 0;
-      images?.forEach(image => {
+      images?.forEach((image) => {
         if (image.complete) {
           imagesLoaded++;
         } else {
