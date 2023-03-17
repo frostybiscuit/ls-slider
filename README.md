@@ -11,6 +11,9 @@ A lightweight JS/CSS Slider with focus on native mobile touch controls
 - [ ] consider accessibility (might be done after initial release)
 - [ ] code cleanup
 
+## Post-release To-Do's
+- [ ] add lazy loading
+
 ## Setup
 ls-slider is initialized by passing the elements and options to a JS class.
 For example:
