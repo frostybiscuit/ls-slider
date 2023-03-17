@@ -1,6 +1,8 @@
 # ls-slider
 A lightweight JS/CSS Slider with focus on native mobile touch controls
 
+**This plugin is still in the works and will need some additional adaptions and features before reaching 1.0.0. Please do NOT use this for production in its current state!!**
+
 ## Pre-release To-Do's
 - [ ] fix indicator scroll animation
 - [x] fix infinite scroll on mobile
