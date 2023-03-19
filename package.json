@@ -1,6 +1,6 @@
 {
   "name": "ls-slider",
-  "version": "0.8.8",
+  "version": "0.8.9",
   "description": "A lightweight JS/CSS slider",
   "main": "./dist/Slider.min.js",
   "scripts": {
