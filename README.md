@@ -1,6 +1,10 @@
 # ls-slider
 A lightweight JS/CSS Slider with focus on native mobile touch controls
 
+[![NPM Version](https://badgen.net/npm/v/ls-slider)](https://www.npmjs.com/package/ls-slider)
+[![NPM Install Size](https://badgen.net/packagephobia/install/ls-slider)](https://packagephobia.com/result?p=ls-slider)
+[![NPM Downloads](https://badgen.net/npm/dt/ls-slider)](https://npmcharts.com/compare/ls-slider?minimal=true)
+
 **This plugin is still in the works and will need some additional adaptions and features before reaching 1.0.0. Please do NOT use this for production in its current state!!**
 
 ## Pre-release To-Do's
@@ -15,6 +19,13 @@ A lightweight JS/CSS Slider with focus on native mobile touch controls
 - [ ] add lazy loading
 
 ## Setup
+Either install the npm package via Node.js by running
+```console
+npm i ls-slider
+```
+or clone the repository and use the Slider.min.js from the /dist folder.
+
+
 ls-slider is initialized by passing the elements and options to a JS class.
 For example:
 
